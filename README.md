@@ -40,6 +40,19 @@ ngrok http 8000
 
 - The custom `serve.py` server ensures visitors do not see the ngrok browser warning.
 
+
+### Run chatbot CLI
+
+```bash
+python main.py
+```
+
+### Run chatbot Web app
+
+```bash
+python webapp.py
+```
+
 ## Project Structure
 ```
 assets/           # Logo and static assets
