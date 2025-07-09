@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WasteHawk Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="assets/logo.png" alt="WasteHawk Logo" class="logo">
+    <h1>WasteHawk Production Dashboard</h1>
+  </header>
+  <main>
+    <section id="telemetry">
+      <h2>Drone Telemetry</h2>
+      <div class="telemetry-grid">
+        <div class="telemetry-item">
+          <span class="label">Temperature</span>
+          <span id="temp-value" class="value">--</span>
+        </div>
+        <div class="telemetry-item">
+          <span class="label">Battery</span>
+          <span id="battery-value" class="value">--</span>
+        </div>
+        <div class="telemetry-item">
+          <span class="label">Location</span>
+          <span id="location-value" class="value">--</span>
+        </div>
+        <div class="telemetry-item">
+          <span class="label">Status</span>
+          <span id="status-value" class="value">--</span>
+        </div>
+      </div>
+    </section>
+    <section id="print-queue">
+      <h2>Print Queue</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Part</th>
+            <th>Status</th>
+            <th>Progress</th>
+          </tr>
+        </thead>
+        <tbody id="queue-body">
+          <!-- Print queue rows injected by JS -->
+        </tbody>
+      </table>
+    </section>
+    <section id="warnings">
+      <h2>Warnings</h2>
+      <ul id="warning-list">
+        <!-- Warnings injected by JS -->
+      </ul>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
