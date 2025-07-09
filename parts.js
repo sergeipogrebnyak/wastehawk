@@ -83,14 +83,18 @@ const parts = [
 
 function renderPartsTable() {
   const tbody = document.querySelector('#parts-table tbody');
+  tbody.innerHTML = '';
   parts.forEach((part, idx) => {
+    // Derive SVG path from part name (snake_case)
+    const svgName = part.stl.replace('.stl', '.svg');
     const tr = document.createElement('tr');
     tr.innerHTML = `
+      <td><img src="${svgName}" alt="${part.name} image" style="width:48px;height:48px;object-fit:contain;"></td>
       <td>${part.name}</td>
       <td>${part.material}</td>
       <td>${part.weight}</td>
       <td><a href="${part.stl}" download>Download</a></td>
-      <td><a href="${part.spec}" target="_blank">Spec Sheet</a></td>
+      <td><a href="${part.spec.replace('.html', '.md')}" target="_blank">Spec Sheet</a></td>
       <td>${part.desc}</td>
       <td><button class="btn btn-outline-primary btn-sm preview-btn" data-stl="${part.stl}" data-bs-toggle="modal" data-bs-target="#stlPreviewModal">Preview</button></td>
     `;
